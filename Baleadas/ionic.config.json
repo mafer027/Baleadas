@@ -1,0 +1,7 @@
+{
+  "name": "Baleadas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
