@@ -34,6 +34,14 @@ const routes: Routes = [
     path: 'no-efectivo-con-sal',
     loadChildren: () => import('./no-efectivo-con-sal/no-efectivo-con-sal.module').then( m => m.NoEfectivoConSalPageModule)
   },
+  {
+    path: 'si-efectivo-sin-sal',
+    loadChildren: () => import('./si-efectivo-sin-sal/si-efectivo-sin-sal.module').then( m => m.SiEfectivoSinSalPageModule)
+  },
+  {
+    path: 'no-efectivo-sin-sal',
+    loadChildren: () => import('./no-efectivo-sin-sal/no-efectivo-sin-sal.module').then( m => m.NoEfectivoSinSalPageModule)
+  },
 
 ];
 
