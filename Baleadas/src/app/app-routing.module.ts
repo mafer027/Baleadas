@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'no-efectivo',
     loadChildren: () => import('./no-efectivo/no-efectivo.module').then( m => m.NoEfectivoPageModule)
-  },  {
+  },
+  {
     path: 'si-efectivo',
     loadChildren: () => import('./si-efectivo/si-efectivo.module').then( m => m.SiEfectivoPageModule)
   },
@@ -34,7 +35,31 @@ const routes: Routes = [
     path: 'no-efectivo-con-sal',
     loadChildren: () => import('./no-efectivo-con-sal/no-efectivo-con-sal.module').then( m => m.NoEfectivoConSalPageModule)
   },
-
+  {
+    path: 'si-efectivo-sin-sal',
+    loadChildren: () => import('./si-efectivo-sin-sal/si-efectivo-sin-sal.module').then( m => m.SiEfectivoSinSalPageModule)
+  },
+  {
+    path: 'no-efectivo-sin-sal',
+    loadChildren: () => import('./no-efectivo-sin-sal/no-efectivo-sin-sal.module').then( m => m.NoEfectivoSinSalPageModule)
+  },
+  {
+    path: 'si-efectivo-con-carne',
+    loadChildren: () => import('./si-efectivo-con-carne/si-efectivo-con-carne.module').then( m => m.SiEfectivoConCarnePageModule)
+  },
+  {
+    path: 'si-efectivo-sin-carne',
+    loadChildren: () => import('./si-efectivo-sin-carne/si-efectivo-sin-carne.module').then( m => m.SiEfectivoSinCarnePageModule)
+  },
+  {
+    path: 'no-efectivo-con-carne',
+    loadChildren: () => import('./no-efectivo-con-carne/no-efectivo-con-carne.module').then( m => m.NoEfectivoConCarnePageModule)
+  },
+  {
+    path: 'no-efectivo-sin-carne',
+    loadChildren: () => import('./no-efectivo-sin-carne/no-efectivo-sin-carne.module').then( m => m.NoEfectivoSinCarnePageModule)
+  },
+ 
 ];
 
 @NgModule({

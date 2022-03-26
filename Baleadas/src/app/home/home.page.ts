@@ -38,6 +38,28 @@ export class HomePage {
     this.router.navigate(['/no-efectivo-con-sal']);
   }
 
+  goTonoEfectivoSinSal(){
+    this.router.navigate(['/no-efectivo-sin-sal']);
+  }
+  goTosiEfectivoSinSal(){
+    this.router.navigate(['/si-efectivo-sin-sal']);
+  }
+
+  goTosiEfectivoConCarne(){
+    this.router.navigate(['/si-efectivo-con-carne']);
+  }
+
+  goTonoEfectivoConCarne(){
+    this.router.navigate(['/no-efectivo-con-carne']);
+  }
+
+  goTosiEfectivoSinCarne(){
+    this.router.navigate(['/si-efectivo-sin-carne']);
+  }
+
+  goTonoEfectivoSinCarne(){
+    this.router.navigate(['/no-efectivo-sin-carne']);
+  }
 
   async presentAlertConfirm() {
     const alert = await this.alertController.create({
@@ -67,7 +89,6 @@ export class HomePage {
 
     await alert.present();
   } //Elige si quiere Baleada con Frijoles y Huevo Nivel 0
-
 
   async presentAlertConHuevo() {
     const alert = await this.alertController.create({
@@ -227,21 +248,21 @@ export class HomePage {
           id: 'cancel-button',
           handler: (blah) => {
             console.log('Confirm No: Carne');
-            
+            this.presentAlertEfectivoSinCarne();
           }
         }, {
           text: 'Si',
           id: 'confirm-button',
           handler: () => {
             console.log('Confirm Si: Carne');
-
+            this.presentAlertEfectivoConCarne();
           }
         }
       ]
     });
 
     await alert.present();
-  } //Despues de Elegir (NO) En el Segundo Nivel - Aguacate
+  } //Despues de Elegir (NO) En el Segundo Nivel - Aguacate //Sin Terminar
 
   async presentAlertEfectivoConSal() {
     const alert = await this.alertController.create({
@@ -285,14 +306,14 @@ export class HomePage {
           id: 'cancel-button',
           handler: (blah) => {
             console.log('Confirm No: Efectivo sin Sal');
-            
+            this.goTonoEfectivoSinSal();
           }
         }, {
           text: 'Si',
           id: 'confirm-button',
           handler: () => {
             console.log('Confirm Si: Efectivo sin Sal');
-            
+            this.goTosiEfectivoSinSal();
           }
         }
       ]
@@ -300,4 +321,61 @@ export class HomePage {
 
     await alert.present();
   } //Despues de Elegir (NO) En el Tercer Nivel - Sal y Pimienta
+
+  async presentAlertEfectivoSinCarne() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Ordenando la Baleada',
+      message: 'Efectivo?',
+      buttons: [
+        {
+          text: 'NO',
+          role: 'cancel',
+          cssClass: 'secondary',
+          id: 'cancel-button',
+          handler: (blah) => {
+            console.log('Confirm No: Efectivo sin Carne');
+            this.goTonoEfectivoSinCarne();
+          }
+        }, {
+          text: 'Si',
+          id: 'confirm-button',
+          handler: () => {
+            console.log('Confirm Si: Efectivo sin Carne');
+            this.goTosiEfectivoSinCarne();
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
+  async presentAlertEfectivoConCarne() {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Ordenando la Baleada',
+      message: 'Efectivo?',
+      buttons: [
+        {
+          text: 'NO',
+          role: 'cancel',
+          cssClass: 'secondary',
+          id: 'cancel-button',
+          handler: (blah) => {
+            console.log('Confirm No: Efectivo con Carne');
+            this.goTonoEfectivoConCarne();
+          }
+        }, {
+          text: 'Si',
+          id: 'confirm-button',
+          handler: () => {
+            console.log('Confirm Si: Efectivo con Carne');
+            this.goTosiEfectivoConCarne();
+          }
+        }
+      ]
+    });
+    await alert.present();
+  }
+
 }
