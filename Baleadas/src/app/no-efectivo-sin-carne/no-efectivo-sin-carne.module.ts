@@ -7,12 +7,14 @@ import { IonicModule } from '@ionic/angular';
 import { NoEfectivoSinCarnePageRoutingModule } from './no-efectivo-sin-carne-routing.module';
 
 import { NoEfectivoSinCarnePage } from './no-efectivo-sin-carne.page';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
     NoEfectivoSinCarnePageRoutingModule
   ],
   declarations: [NoEfectivoSinCarnePage]
